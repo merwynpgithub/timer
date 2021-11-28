@@ -1,13 +1,18 @@
 const args = process.argv;
 
+function checkIfPosititiveNum(numConvert) {
+  return !isNaN(numConvert) && numConvert >= 0;
+}
+
 console.log("This will make it beep at:");
-args.slice(2).forEach((num) => {
-  let numCheck = Number(num);
-  if(!isNaN(numCheck) && numCheck >= 0) {
-    setTimeout(() => {
-      console.log(`${numCheck} seconds`);
-      process.stdout.write('\x07');
-    }, num * 1000);
+const timeArray = args.slice(2); //use variables
+timeArray.forEach((num) => {
+  let numConvert = Number(num);
+  const printNum = () => {
+    console.log(`${numConvert} seconds`);
+    process.stdout.write('\x07');
+  };
+  if(checkIfPosititiveNum(numConvert)) { //refactor
+    setTimeout(printNum, num * 1000);
   }
 });
-

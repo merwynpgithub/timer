@@ -3,7 +3,7 @@
 
 ## Purposes
 * Introduction to Asynchronous Programming by using setTimeout function
-* Mimicing the typewriter effect
+* Using inline arguments using `process.argv`
 
 ## Using this app
 * Clone the repo
